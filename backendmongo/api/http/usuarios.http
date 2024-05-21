@@ -1,0 +1,30 @@
+//Teste de endpoint dos usuários
+@baseURL = http://localhost:4001/api/usuarios
+
+###
+# @prompt senha
+POST {{baseURL}}
+Content-Type: application/json
+{
+    "nome": "Kazio Castro Lima",
+    "email": "tchau@bol.com.br",
+    "senha": "{{senha}}"
+}
+
+###
+// GET - Lista todos os usuários 
+GET {{baseURL}}
+Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjYzOTVmNDI5ZWFjZjVlMDk4MDNmNzM0In0sImlhdCI6MTcxNTAzNzM5MSwiZXhwIjoxNzE1MTIzNzkxfQ.uOORlbmizCPFmxdD5Y87WoGW7re51lqEt8NebP_jeOQ
+
+
+###
+# @prompt senha
+// POST - Efetua o login
+POST {{baseURL}}/login
+Content-Type: application/json
+
+{
+    "email": "oi@bol.com.br",
+    "senha": "{{senha}}"
+}

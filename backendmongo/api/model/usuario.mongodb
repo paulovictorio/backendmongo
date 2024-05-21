@@ -1,0 +1,16 @@
+use('FatecVotorantim')
+
+db.usuarios.insertOne({
+    'nome': 'Maria José',
+    'email': 'mariajose@uol.com.br',
+    'senha': '123Mudar',
+    'ativo': true,
+    'tipo': 'Cliente',
+    'avatar': 'https://ui-avatars.com/api/?name=Maria+Jos%C3%A9&background=F00&color=FFF'
+})
+//Criando um índice único
+use('FatecVotorantim')
+db.usuarios.createIndex({'email':1},{unique:true})
+//Exemplo de listagem
+use('FatecVotorantim')
+db.usuarios.find({},{senha:0})

@@ -1,0 +1,48 @@
+use('FatecVotorantim')
+const prestador = 
+
+{
+    "cnpj": "784398237869",
+    "razao_social": "SERCIÇOS MOTOBOYOLA LTDA.",
+    "cep": "13310160",
+    "endereco": {
+        "logradouro": "Av. Presidente Kennedy, 321",
+        "complemento": "",
+        "bairro": "Centro",
+        "localidade": "Votorantim",
+        "uf": "SP"
+    },
+    "cnae_fiscal": 451510,
+    "nome_fantasia": "ZÉ MOTOBOY",
+    "data_inicio_atividade": "2022-07-22",
+    "localizacao": {
+        "type": "Point",
+        "coordinates": [-23.2904, -47.2963]
+    }
+}
+db.prestadores.insertOne(prestador)
+
+use('FatecVotorantim')
+db.prestadores.find()
+
+use('FatecVotorantim')
+const prestador2 = {
+    "cnpj": "781946025669",
+    "razao_social": "RENATO LANCHES LTDA.",
+    "cep": "13310160",
+    "endereco": {
+        "logradouro": "Av. Presidente Kennedy, 321",
+        "complemento": "",
+        "bairro": "Centro",
+        "localidade": "Votorantim",
+        "uf": "SP"
+    },
+    "cnae_fiscal": 451510,
+    "nome_fantasia": "RENATÃO",
+    "data_inicio_atividade": "2022-07-22",
+    "localizacao": {
+        "type": "Point",
+        "coordinates": [-23.2904, -47.2963]
+    }
+}
+db.prestadores.insertOne(prestador2)

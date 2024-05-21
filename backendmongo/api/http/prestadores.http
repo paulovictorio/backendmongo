@@ -1,0 +1,83 @@
+// Teste da API REST de prestadores
+
+@baseURL = http://localhost:4001/api/prestadores
+
+// GET - Lista todos os prestadores
+GET {{baseURL}}/?limit=3&skip=0
+Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjYzOTVmNDI5ZWFjZjVlMDk4MDNmNzM0In0sImlhdCI6MTcxNjI0NjMxMywiZXhwIjoxNzE2MzMyNzEzfQ.BvoULETgJTiN-2tw0dqXnJ-psAbFitMrX-VahGSKtpI
+
+
+###
+//GET - Lista o prestador pelo ID
+GET {{baseURL}}/id/6639727bc10fae1d8fc34741
+Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjYzOTVmNDI5ZWFjZjVlMDk4MDNmNzM0In0sImlhdCI6MTcxNTAzNzM5MSwiZXhwIjoxNzE1MTIzNzkxfQ.uOORlbmizCPFmxdD5Y87WoGW7re51lqEt8NebP_jeOQ
+
+
+
+###
+//GET - Lista o prestador pela razao social ou fantasia
+GET {{baseURL}}/razao/renatão
+Content-Type: application/json
+
+###
+//DELETE - Remove o prestador pelo ID
+DELETE {{baseURL}}/65f8c3aa68a6618affb0510b
+Content-Type: application/json
+
+###
+//POST - Insere um novo prestador
+POST {{baseURL}}
+Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjYzOTVmNDI5ZWFjZjVlMDk4MDNmNzM0In0sImlhdCI6MTcxNjI0NjMxMywiZXhwIjoxNzE2MzMyNzEzfQ.BvoULETgJTiN-2tw0dqXnJ-psAbFitMrX-VahGSKtpI
+
+
+{
+    "cnpj": "78439823786924",
+    "razao_social": "SERVIÇOS JANAI2 LTDA.",
+    "cep": "13310160",
+    "endereco": {
+        "logradouro": "Av. Presidente Kennedy, 321",
+        "complemento": "",
+        "bairro": "Centro",
+        "localidade": "Votorantim",
+        "uf": "SP"
+    },
+    "cnae_fiscal": 451510,
+    "nome_fantasia": "ZÉ JANAI2",
+    "data_inicio_atividade": "2022-07-22",
+    "localizacao": {
+        "type": "Point",
+        "coordinates": [-23.2904, -47.2963]
+    }
+}
+
+###
+// PUT - Altera um prestador que ja existe
+PUT {{baseURL}}
+Content-Type: application/json
+
+{
+    "_id": "65f8c4fc19ffa91b5fd315dd",
+    "cnpj": "78194602566939",
+    "razao_social": "RENATO LANCHES LTDA.",
+    "cep": "13310160",
+    "endereco": {
+      "logradouro": "Av. Presidente Kennedy, 321",
+      "complemento": "",
+      "bairro": "Centro",
+      "localidade": "Votorantim",
+      "uf": "SP"
+    },
+    "cnae_fiscal": 451510,
+    "nome_fantasia": "RENATÃO TESTE",
+    "data_inicio_atividade": "2022-07-22",
+    "localizacao": {
+      "type": "Point",
+      "coordinates": [
+        -23.2904,
+        -47.2963
+      ]
+    }
+  }
